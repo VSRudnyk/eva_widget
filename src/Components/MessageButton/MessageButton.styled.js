@@ -1,9 +1,20 @@
 import styled from 'styled-components';
 
 export const ButtonContainer = styled.div`
-  display: flex;
+  display: grid;
+  grid-column: auto;
   gap: 4px;
   margin: 15px 0 15px;
+
+  @media (min-width: 351px) and (max-width: 649px) {
+    display: inline-grid;
+    grid-template-columns: auto auto;
+    grid-template-rows: auto auto;
+  }
+  @media (min-width: 650px) {
+    display: inline-grid;
+    grid-template-columns: auto auto auto auto;
+  }
 `;
 
 export const QuickMessageBtn = styled.button`

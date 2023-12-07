@@ -14,6 +14,8 @@ export const UserInput = ({ userSubmit }) => {
     <Form onSubmit={handleSubmit}>
       <Input
         type='text'
+        placeholder='Enter your message...'
+        autoComplete='off'
         value={userInput}
         onChange={(e) => setUserInput(e.target.value)}
       />

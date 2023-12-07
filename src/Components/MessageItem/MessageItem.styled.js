@@ -7,13 +7,14 @@ export const MessageBox = styled.div`
   flex-direction: row;
 `;
 
-export const MessageItem = styled.li`
+export const MessageContainer = styled.li`
   display: flex;
   flex-direction: column;
   align-items: ${({ $role }) => ($role === 'bot' ? 'flex-start' : 'flex-end')};
+  margin-right: 8px;
 `;
 
-export const MessageText = styled.p`
+export const MessageText = styled.div`
   padding: 8px 16px;
   color: ${({ $role, $iferror }) =>
     $role === 'user'
@@ -21,6 +22,7 @@ export const MessageText = styled.p`
       : $iferror && $role === 'bot'
       ? 'red'
       : 'var(--neutral-dark)'};
+  font-family: 'Manrope', sans-serif;
   font-size: 14px;
   font-weight: 500;
   line-height: 1.7;
@@ -32,8 +34,6 @@ export const MessageText = styled.p`
   background: ${({ $role }) =>
     $role === 'bot' ? 'var(--grey)' : 'var(--primary-pink)'};
   white-space: pre-line;
-
-  /* color: ${({ $iferror }) => 'red'}; */
 `;
 
 export const MessageTime = styled.p`

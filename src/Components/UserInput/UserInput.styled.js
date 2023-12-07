@@ -21,8 +21,8 @@ export const Input = styled.input`
 export const SendButton = styled.button`
   display: flex;
   padding: 4px;
-  justify-content: flex-end;
   align-items: center;
+  justify-content: center;
   border-radius: 50%;
   border: none;
   background: var(
