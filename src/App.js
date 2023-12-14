@@ -1,7 +1,7 @@
 import { Routes, Route, Navigate } from 'react-router-dom';
 import { Layout } from './Components/Layout';
-import { PrivateRoute } from './Components/PrivateRoute';
-import { PublicRoute } from './Components/PublicRoute';
+// import { PrivateRoute } from './Components/PrivateRoute';
+// import { PublicRoute } from './Components/PublicRoute';
 import { Auth } from './Components/Auth/Auth';
 import { Widget } from './Components/Widget/Widget';
 import { useSelector } from 'react-redux';
@@ -18,17 +18,17 @@ function App() {
         <Route
           path='auth'
           element={
-            <PublicRoute restricted>
-              <Auth />
-            </PublicRoute>
+            // <PublicRoute restricted>
+            <Auth />
+            // </PublicRoute>
           }
         />
         <Route
           path='widget'
           element={
-            <PrivateRoute>
-              <Widget />
-            </PrivateRoute>
+            // <PrivateRoute>
+            <Widget />
+            // </PrivateRoute>
           }
         />
         <Route path='*' element={<Navigate to='auth' />} />
