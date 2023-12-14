@@ -1,5 +1,6 @@
 import { useSearchParams } from 'react-router-dom';
 import { useAuthMutation } from '../../redux/authAPI';
+import { AuthContainer, Button } from './Auth.styled';
 
 export const Auth = () => {
   const [searchParams] = useSearchParams();
@@ -11,9 +12,8 @@ export const Auth = () => {
   };
 
   return (
-    <>
-      <div>Auth Page</div>
-      <button onClick={() => onSubmit({ _id: id })}>Get Chat</button>
-    </>
+    <AuthContainer>
+      <Button onClick={() => onSubmit({ _id: id })}>Get Chat</Button>
+    </AuthContainer>
   );
 };

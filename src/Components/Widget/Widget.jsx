@@ -33,7 +33,7 @@ export const Widget = () => {
     return messageContainer;
   }
   // Змінні для збереження часу останнього повідомлення
-  let lastMessageTime = null;
+  let lastMessageTime;
   let currentTimeElement = null;
 
   const addBotMessageToLog = (messageContainer, message, cssClass) => {
@@ -101,6 +101,16 @@ export const Widget = () => {
     chatRef.current.style.minHeight = 'calc(85vh - 80px)';
   }
 
+  function handleUserInput(text) {
+    if (text.trim() === '') {
+      return;
+    }
+    setVisibleBtnMsg(false);
+    addUserMessageToLog(text);
+    communicateWithBot(text);
+    chatRef.current.style.minHeight = 'calc(85vh - 80px)';
+  }
+
   useEffect(() => {
     async function greetings() {
       const messageContainer = createMessageContainerForBot();
@@ -135,13 +145,11 @@ export const Widget = () => {
       const data = response.json();
       addBotMessageToLog(messageContainer, data.response);
     } catch (error) {
-      setTimeout(function () {
-        addBotMessageToLog(
-          messageContainer,
-          'Наразі я не можу прийняти Ваше повідомлення, спробуйте ще раз!',
-          'error-text'
-        );
-      }, 2000);
+      addBotMessageToLog(
+        messageContainer,
+        'Наразі я не можу прийняти Ваше повідомлення, спробуйте ще раз!',
+        'error-text'
+      );
     }
   }
 
@@ -150,10 +158,8 @@ export const Widget = () => {
       <ChatLog ref={chatRef}></ChatLog>
       <InputContainer>
         {visibleBtnMsg && <MessageButton onClickBtn={handleHintMsg} />}
-        <UserInput userSubmit={handleHintMsg} />
+        <UserInput userSubmit={handleUserInput} />
       </InputContainer>
     </MainContainer>
   );
 };
-
-//

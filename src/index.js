@@ -8,13 +8,13 @@ import { store } from './redux/store';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  // <React.StrictMode>
-  <Provider store={store}>
-    <BrowserRouter basename='/'>
-      <App />
-    </BrowserRouter>
-  </Provider>
-  // </React.StrictMode>
+  <React.StrictMode>
+    <Provider store={store}>
+      <BrowserRouter basename='/eva_widget'>
+        <App />
+      </BrowserRouter>
+    </Provider>
+  </React.StrictMode>
 );
 
 reportWebVitals();
