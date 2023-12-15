@@ -12,7 +12,6 @@ import {
 import storage from 'redux-persist/lib/storage';
 import { setupListeners } from '@reduxjs/toolkit/query';
 import { authAPI } from './authAPI';
-import { messageAPI } from './messageAPI';
 import authReducer from './authSlice';
 
 const authPersistConfig = {
@@ -25,7 +24,6 @@ const persistedReducer = persistReducer(authPersistConfig, authReducer);
 
 export const store = configureStore({
   reducer: {
-    [messageAPI.reducerPath]: messageAPI.reducer,
     [authAPI.reducerPath]: authAPI.reducer,
     auth: persistedReducer,
   },
@@ -36,7 +34,6 @@ export const store = configureStore({
       },
     }),
 
-    messageAPI.middleware,
     authAPI.middleware,
   ],
 });
