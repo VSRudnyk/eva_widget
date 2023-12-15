@@ -1,6 +1,7 @@
 :root {
   --primary-pink: #ed3984;
   --primary-gradient: linear-gradient(90deg, #ed3984, #7552c8);
+  --primary-purple: #7552c8;
   --neutral-white: #fff;
   --neutral-dark: #07061f;
   --neutral-light-grey: #bfbfbf;

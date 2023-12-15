@@ -8,6 +8,7 @@ export const AuthContainer = styled.div`
 `;
 
 export const Button = styled.button`
+  cursor: pointer;
   display: flex;
   width: 194px;
   padding: 16px 32px;
@@ -16,7 +17,7 @@ export const Button = styled.button`
   gap: 8px;
   border: 0;
   border-radius: 32px;
-  background: #ed3984;
+  background: var(--primary-pink);
   color: var(--White, #fff);
   text-align: center;
   font-family: Montserrat, sans-serif;
@@ -24,4 +25,8 @@ export const Button = styled.button`
   font-style: normal;
   font-weight: 600;
   line-height: 24px;
+
+  &:hover {
+    background: var(--primary-purple);
+  }
 `;
