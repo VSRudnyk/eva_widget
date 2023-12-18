@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 
 export const HeaderContainer = styled.div`
+  position: absolute;
   display: flex;
   flex-direction: column;
   width: 100%;
