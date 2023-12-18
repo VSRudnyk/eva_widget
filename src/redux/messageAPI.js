@@ -1,7 +1,7 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 
-export const authAPI = createApi({
-  reducerPath: 'authAPI',
+export const messageAPI = createApi({
+  reducerPath: 'messageAPI',
   baseQuery: fetchBaseQuery({
     baseUrl: 'http://localhost:3000/api/database/',
     prepareHeaders: (headers, { getState }) => {
@@ -13,12 +13,12 @@ export const authAPI = createApi({
     },
   }),
   endpoints: (builder) => ({
-    fetchCurrentBot: builder.query({
-      query: () => 'auth/current',
+    greet: builder.query({
+      query: () => 'greet',
     }),
-    auth: builder.mutation({
+    chat: builder.mutation({
       query: (credentials) => ({
-        url: 'auth',
+        url: 'chat',
         method: 'POST',
         body: credentials,
       }),
@@ -26,4 +26,4 @@ export const authAPI = createApi({
   }),
 });
 
-export const { useAuthMutation, useFetchCurrentBotQuery } = authAPI;
+export const { useGreetQuery, useChatMutation } = messageAPI;
