@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/eva_widget/static/css/main.8fdfbde6.css",
-    "main.js": "/eva_widget/static/js/main.ccb69dd9.js",
+    "main.js": "/eva_widget/static/js/main.5f105e75.js",
     "static/media/logo.svg": "/eva_widget/static/media/logo.074f7082af4f6d6f300143080ce4eb71.svg",
     "index.html": "/eva_widget/index.html",
     "static/media/icon_send.svg": "/eva_widget/static/media/icon_send.33e69cf20e656b645ccc4e48607bd91b.svg",
     "main.8fdfbde6.css.map": "/eva_widget/static/css/main.8fdfbde6.css.map",
-    "main.ccb69dd9.js.map": "/eva_widget/static/js/main.ccb69dd9.js.map"
+    "main.5f105e75.js.map": "/eva_widget/static/js/main.5f105e75.js.map"
   },
   "entrypoints": [
     "static/css/main.8fdfbde6.css",
-    "static/js/main.ccb69dd9.js"
+    "static/js/main.5f105e75.js"
   ]
 }
