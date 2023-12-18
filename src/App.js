@@ -1,4 +1,4 @@
-import { Routes, Route, Navigate } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 import { Layout } from './Components/Layout';
 import { PrivateRoute } from './Components/PrivateRoute';
 import { PublicRoute } from './Components/PublicRoute';
@@ -13,19 +13,21 @@ import './index.css';
 function App() {
   const [searchParams] = useSearchParams();
   const id = searchParams.get('id');
-  localStorage.setItem('userId', id)
   const token = useSelector(authSelectors.getToken);
   useFetchCurrentBotQuery(null, { skip: !token });
   return (
     <>
-    <Layout />
-    <p>{id}</p>
+    {id}
     <Routes>
+      <Route
+      path='/'
+      element={<Layout />}
+      >
         <Route
-          path='/auth'
+          path='/auth/:id'
           element={
             <PublicRoute restricted>
-              <Auth />
+              <Auth id={id}/>
             </PublicRoute>
           }
         />
@@ -37,7 +39,7 @@ function App() {
             </PrivateRoute>
           }
         />
-        <Route path='*' element={<Navigate to='/auth'/>} />
+        </Route>
     </Routes>
     </>
   );
