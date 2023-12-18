@@ -17,14 +17,13 @@ function App() {
   useFetchCurrentBotQuery(null, { skip: !token });
   return (
     <>
-    {id}
     <Routes>
       <Route
       path='/'
       element={<Layout />}
       >
         <Route
-          path='/auth/:id'
+          path='/auth'
           element={
             <PublicRoute restricted>
               <Auth id={id}/>
