@@ -7,16 +7,22 @@ import { Widget } from './Components/Widget/Widget';
 import { useSelector } from 'react-redux';
 import authSelectors from '../src/redux/authSelectors';
 import { useFetchCurrentBotQuery } from './redux/authAPI';
+import { useSearchParams } from 'react-router-dom';
 import './index.css';
 
 function App() {
+  const [searchParams] = useSearchParams();
+  const id = searchParams.get('id');
+  localStorage.setItem('userId', id)
   const token = useSelector(authSelectors.getToken);
   useFetchCurrentBotQuery(null, { skip: !token });
   return (
+    <>
+    <Layout />
+    <p>{id}</p>
     <Routes>
-      <Route path='/' element={<Layout />}>
         <Route
-          path='auth'
+          path='/auth'
           element={
             <PublicRoute restricted>
               <Auth />
@@ -24,16 +30,16 @@ function App() {
           }
         />
         <Route
-          path='widget'
+          path='/widget'
           element={
             <PrivateRoute>
               <Widget />
             </PrivateRoute>
           }
         />
-        <Route path='*' element={<Navigate to='auth' />} />
-      </Route>
+        <Route path='*' element={<Navigate to='/auth'/>} />
     </Routes>
+    </>
   );
 }
 

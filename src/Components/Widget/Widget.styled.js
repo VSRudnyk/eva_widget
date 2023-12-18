@@ -2,6 +2,7 @@ import styled from 'styled-components';
 
 export const MainContainer = styled.main`
   padding: 16px;
+  padding-top: 96px;
 `;
 
 export const ChatLog = styled.div`

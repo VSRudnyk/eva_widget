@@ -7,7 +7,7 @@ import App from './App';
 import { store, persistor  } from './redux/store';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-<React.StrictMode>
+
   <Provider store={store}>
   <PersistGate loading={null} persistor={persistor}>
     <BrowserRouter basename='/eva_widget'>
@@ -15,5 +15,5 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     </BrowserRouter>
     </PersistGate>
   </Provider>
-</React.StrictMode>
+
 );

@@ -1,10 +1,11 @@
-import { useSearchParams } from 'react-router-dom';
+// import { useSearchParams } from 'react-router-dom';
 import { useAuthMutation } from '../../redux/authAPI';
 import { AuthContainer, Button } from './Auth.styled';
 
 export const Auth = () => {
-  const [searchParams] = useSearchParams();
-  const id = searchParams.get('id');
+  // const [searchParams] = useSearchParams();
+  // const id = searchParams.get('id');
+  const id = localStorage.getItem('userId')
   const [logIn] = useAuthMutation();
 
   const onSubmit = async (botId) => {
