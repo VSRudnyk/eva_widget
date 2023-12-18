@@ -16,7 +16,6 @@ function App() {
   const token = useSelector(authSelectors.getToken);
   useFetchCurrentBotQuery(null, { skip: !token });
   return (
-    <>
     <Routes>
       <Route
       path='/'
@@ -40,7 +39,6 @@ function App() {
         />
         </Route>
     </Routes>
-    </>
   );
 }
 
