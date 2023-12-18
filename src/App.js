@@ -1,8 +1,4 @@
-import { Routes, Route } from 'react-router-dom';
 import { Layout } from './Components/Layout';
-import { PrivateRoute } from './Components/PrivateRoute';
-import { PublicRoute } from './Components/PublicRoute';
-import { Auth } from './Components/Auth/Auth';
 import { Widget } from './Components/Widget/Widget';
 import { useSelector } from 'react-redux';
 import authSelectors from '../src/redux/authSelectors';
@@ -28,6 +24,7 @@ function App() {
 
   return (
     <>
+    <Layout/>
     {isSuccess && <Widget/>}
     </>
   );
